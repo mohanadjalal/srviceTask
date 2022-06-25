@@ -1,0 +1,38 @@
+<div class="table w-75 mx-auto">
+  <thead>
+    <tr>
+      <th class="col">ID</th>
+      <th class="col">Client Name</th>
+      <th class="col">Description</th>
+      <th class="col">Legal Entity</th>
+      <th class="col">
+        <button class="btn btn-primary btn-sm mt-1" (click)="addAccount()">
+          Add
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let acc of accounts">
+      <td class="col">{{ acc.id }}</td>
+      <td class="col">{{ acc.clientName }}</td>
+      <td class="col">{{ acc.description }}</td>
+      <td class="col">{{ acc.legalEntity }}</td>
+
+      <td class="col">
+        <button
+          class="btn btn-success btn-sm m-1"
+          (click)="editAccount(acc.id)"
+        >
+          Edit
+        </button>
+        <button
+          class="btn btn-danger btn-sm m-1"
+          (click)="deleteAccount(acc.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</div>
